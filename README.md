@@ -20,7 +20,7 @@ For details on the experimental setup, data collection, and processing, please r
 ## Purpose
 This repository is designed to:
 - Facilitate reproducibility of the study’s results.
-- Encourage further exploration of kinematic hand synergies and functional manipulation.
+- Encourage further exploration of kinematic hand synergies during functional manipulation.
 ---
 
 For any questions or issues with the repository, please contact [A. Michael West Jr.](mailto:awest36@jh.edu).
