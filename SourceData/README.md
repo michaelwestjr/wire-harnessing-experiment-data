@@ -7,6 +7,7 @@ The dataset is designed to facilitate further exploration of kinematic hand syne
 ---
 
 ## Abbreviations
+
 The following abbreviations are used throughout the dataset:
 
 1. **R2G** – Reach-and-Grasp Experiment.
@@ -48,25 +49,127 @@ For details on these abbreviations, refer to the manuscript.
 
 ## File Descriptions
 
-Each file is provided in MATLAB’s `.mat` format. Below is a description of the file structure and contents:
+### 1. `X_R2G_SUBJECTbyOBJECT_raw.mat`
+- **Description**: Raw joint angle data collected from the CyberGlove during the Reach-and-Grasp experiment.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Object.
+  - **Each cell contains**: An n x 23 array where:
+    - **Rows (n)**: Time-stamped observations.
+    - **Columns (23)**: Joint degrees of freedom.
 
-1. **`X_R2G_SUBJECTbyOBJECT_raw.mat`**  
-   - **Description**: Raw joint angle data collected from the CyberGlove during the Reach-and-Grasp experiment.  
-   - **Structure**: 7 x 5 cell array:
-     - **Rows**: Subject.
-     - **Columns**: Object.
-     - **Each cell contains**: An n x 23 array where:
-       - **Rows (n)**: Time-stamped observations.
-       - **Columns (23)**: Joint degrees of freedom.
+### 2. `X_R2G_bySubject.mat`
+- **Description**: Preprocessed “All Tools” Reach-and-Grasp joint angle data.
+- **Structure**: 4000 x 23 x 7 array:
+  - **Dimension 1 (4000)**: Time-stamped observations.
+  - **Dimension 2 (23)**: Joint degrees of freedom.
+  - **Dimension 3 (7)**: Subject.
 
-2. **`X_R2G_bySubject.mat`**  
-   - **Description**: Preprocessed “All Tools” Reach-and-Grasp joint angle data.  
-   - **Structure**: 4000 x 23 x 7 array:
-     - **Dimension 1 (4000)**: Time-stamped observations.
-     - **Dimension 2 (23)**: Joint degrees of freedom.
-     - **Dimension 3 (7)**: Subject.
+### 3. `X_R2G_SUBJECTbyOBJECT.mat`
+- **Description**: Preprocessed Reach-and-Grasp joint angle data for individual objects.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Object.
+  - **Each cell contains**: An 800 x 23 array where:
+    - **Rows (800)**: Time-stamped observations after preprocessing.
+    - **Columns (23)**: Joint degrees of freedom.
 
-... *(Continue for each file, following the same structure as above)*
+### 4. `X_Manipulation_SUBJECTbyOBJECT_raw.mat`
+- **Description**: Raw joint angle data collected from the CyberGlove during the Manipulation experiment.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Step.
+  - **Each cell contains**: An n x 23 array where:
+    - **Rows (n)**: Time-stamped observations.
+    - **Columns (23)**: Joint degrees of freedom.
+
+### 5. `X_Manipulation_bySubject.mat`
+- **Description**: Preprocessed “All Tools” Manipulation joint angle data.
+- **Structure**: 5000 x 23 x 7 array:
+  - **Dimension 1 (5000)**: Time-stamped observations.
+  - **Dimension 2 (23)**: Joint degrees of freedom.
+  - **Dimension 3 (7)**: Subject.
+
+### 6. `X_Manipulation_SUBJECTbyOBJECT.mat`
+- **Description**: Preprocessed Manipulation joint angle data for individual objects.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Step.
+  - **Each cell contains**: An n x 23 array where:
+    - **Rows (n)**: Time-stamped observations after preprocessing.
+    - **Columns (23)**: Joint degrees of freedom.
+
+### 7. `t_R2G_SUBJECTbyOBJECT_raw.mat`
+- **Description**: Time stamps collected from the CyberGlove during the Reach-and-Grasp experiment.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Object.
+  - **Each cell contains**: An n x 1 array where:
+    - **Rows (n)**: Time-stamped observations.
+
+### 8. `t_Manipulation_SUBJECTbyOBJECT_raw.mat`
+- **Description**: Time stamps collected from the CyberGlove during the Manipulation experiment.
+- **Structure**: 7 x 5 cell array:
+  - **Rows**: Subject.
+  - **Columns**: Step.
+  - **Each cell contains**: An n x 1 array where:
+    - **Rows (n)**: Time-stamped observations.
+
+### 9. `V_R2G_bySubject.mat`
+- **Description**: The Synergy Matrix obtained from SVD on the Preprocessed “All Tools” Reach-and-Grasp joint angle data in `X_R2G_bySubject.mat`.  
+- **Structure**: 23 x 23 x 7 array:
+  - **Dimension 1 (23)**: Joint degree-of-freedom.
+  - **Dimension 2 (23)**: Synergy number.
+  - **Dimension 3 (7)**: Subject.
+
+### 10. `V_R2G_SUBJECTbyOBJECT.mat`
+- **Description**: The Synergy Matrix obtained from SVD on the Preprocessed Reach-and-Grasp joint angle data for individual objects in `X_R2G_SUBJECTbyOBJECT.mat`.  
+- **Structure**: 23 x 23 x 7 x 5 array:
+  - **Dimension 1 (23)**: Joint degree-of-freedom.
+  - **Dimension 2 (23)**: Synergy number.
+  - **Dimension 3 (7)**: Subject.
+  - **Dimension 4 (5)**: Object.
+
+### 11. `V_Manipulation_bySubject.mat`
+- **Description**: The Synergy Matrix obtained from SVD on the Preprocessed “All Tools” Manipulation joint angle data in `X_Manipulation_bySubject.mat`.  
+- **Structure**: 23 x 23 x 7 array:
+  - **Dimension 1 (23)**: Joint degree-of-freedom.
+  - **Dimension 2 (23)**: Synergy number.
+  - **Dimension 3 (7)**: Subject.
+
+### 12. `V_Manipulation_SUBJECTbyOBJECT.mat`
+- **Description**: The Synergy Matrix obtained from SVD on the Preprocessed Manipulation joint angle data for individual objects in `X_Manipulation_SUBJECTbyOBJECT.mat`.  
+- **Structure**: 23 x 23 x 7 x 5 array:
+  - **Dimension 1 (23)**: Joint degree-of-freedom.
+  - **Dimension 2 (23)**: Synergy number.
+  - **Dimension 3 (7)**: Subject.
+  - **Dimension 4 (5)**: Step.
+
+### 13. `VAF_R2G_bySubject.mat`
+- **Description**: The variance-accounted-for obtained from SVD on the Preprocessed “All Tools” Reach-and-Grasp joint angle data in `X_R2G_bySubject.mat`.  
+- **Structure**: 23 x 7 array:
+  - **Row (23)**: Synergy number.
+  - **Column (7)**: Subject.
+
+### 14. `VAF_R2G_SUBJECTbyOBJECT.mat`
+- **Description**: The variance-accounted-for obtained from SVD on the Preprocessed Reach-and-Grasp joint angle data for individual objects in `X_R2G_SUBJECTbyOBJECT.mat`.  
+- **Structure**: 23 x 7 x 5 array:
+  - **Dimension 1 (23)**: Synergy number.
+  - **Dimension 2 (7)**: Subject.
+  - **Dimension 3 (5)**: Object.
+
+### 15. `VAF_Manipulation_bySubject.mat`
+- **Description**: The variance-accounted-for obtained from SVD on the Preprocessed “All Tools” Manipulation joint angle data in `X_Manipulation_bySubject.mat`.  
+- **Structure**: 23 x 7 array:
+  - **Row (23)**: Synergy number.
+  - **Column (7)**: Subject.
+
+### 16. `VAF_Manipulation_SUBJECTbyOBJECT.mat`
+- **Description**: The variance-accounted-for obtained from SVD on the Preprocessed Manipulation joint angle data for individual objects in `X_Manipulation_SUBJECTbyOBJECT.mat`.  
+- **Structure**: 23 x 7 x 5 array:
+  - **Dimension 1 (23)**: Synergy number.
+  - **Dimension 2 (7)**: Subject.
+  - **Dimension 3 (5)**: Step.
 
 ---
 
