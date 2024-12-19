@@ -11,8 +11,8 @@ For details on the experimental setup, data collection, and processing, please r
 ### 1. Supplementary Figures
 - High-resolution versions of supplementary figures referenced in the manuscript and associated text.
 
-### 2. Source Data Folder
-- Contains all raw and processed data used in the analyses.
+### 2. Source Data
+- All raw and preprocessed data used in the analyses.
 - This folder is accompanied by a separate, detailed [Source Data ReadMe](https://github.com/michaelwestjr/wire-harnessing-experiment-data/blob/main/SourceData/README.docx).
 
 ---
