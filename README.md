@@ -25,3 +25,5 @@ This repository is designed to:
 
 For any questions or issues with the repository, please contact [A. Michael West Jr.](mailto:awest36@jh.edu).
 
+[![DOI](https://zenodo.org/badge/904865391.svg)](https://doi.org/10.5281/zenodo.14532969)
+
